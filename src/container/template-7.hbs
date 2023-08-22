@@ -1,0 +1,107 @@
+<div class="page">
+    <div class="page_content">
+        <header class="header">
+            {{#with header}}
+            <div class="brandName">{{brandName}}</div>
+            <div class="header_ad">
+                <div class="ad">
+                    {{#with ad}}
+                    <label for="" class="logo_ad">Ad</label>
+                    <div class="text_ad">{{text}} {{url}}</div>
+                    {{/with}}
+                </div>
+            </div>
+
+
+
+
+            <nav class="header_nav col-9">
+                <div class="header_nav_right">
+                    {{> nav1 links=header}}
+                </div>
+            </nav>
+            {{/with}}
+        </header>
+
+
+        <main class="main">
+            {{#with info}}
+            <div class="info">
+                <div class="info_content">
+                    <h1 class="info_title">{{title}}</h1>
+                    <p class="info_description">{{description}}</p>
+                </div>
+            </div>
+            {{/with}}
+
+            {{#with form}}
+            <form class="form">
+                <h2 class="form_title">{{title}}</h2>
+                <div class="form_input_list">
+                    {{#each inputs}}
+                    <input type="{{type}}" placeholder="{{placeholder}}" class="form_input" name="{{name}}"
+                        id="form-input-{{id}}" />
+                    {{/each}}
+                </div>
+                <div class="form_checkbox">
+                    <input type="checkbox" name="checkbox.name" id="{{checkbox.name}}">
+                    <div></div>
+                    <label for="{{checkbox.name}}">{{checkbox.label}}</label>
+                </div>
+                <button type="submit" class="form_button">{{button}}</button>
+                <p class="form_info">{{info}}</p>
+            </form>
+            {{/with}}
+        </main>
+
+
+        {{#with updates}}
+        <div class="updates_block">
+            <h4 class="list_title">{{title}}</h4>
+            {{#each list}}
+            <div class="list_user">
+                <div class="list_sign">32*32</div>
+                <div class="list_content">
+                    <span class="list_nickname">{{nickname}}</span>
+                    <p class="list_description">{{description}}</p>
+                </div>
+            </div>
+            {{/each}}
+            <a href="{{show_all.url}}" class="show_link">{{show_all.text}}</a>
+        </div>
+        {{/with}}
+
+        <div class="expirience_block">
+            {{#with expirience}}
+            <div class="expirience_inline">
+                <h3 class="expirience_title">{{title}}</h3>
+                <span class="expirience_badge">{{badge}}</span>
+            </div>
+            <div class="expirience_info">
+                {{#each list}}
+                <div class="expirience column">
+                    <div class="expirience_list">
+                        <h4 class="expirience name">{{name}}</h4>
+                        <p class="expirience details">{{details}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+
+
+        <footer class="footer" id="test">
+            <div>
+                {{> logo1}}
+                <span class="footer_copyright">Copyright 2023-2024</span>
+            </div>
+            {{#each footer}}
+            <div>
+                <span class="footer_title">{{title}}</span>
+                {{> nav list=links isVertical=true}}
+            </div>
+            {{/each}}
+        </footer>
+    </div>
+</div>

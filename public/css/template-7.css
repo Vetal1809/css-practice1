@@ -2,7 +2,7 @@
 :root {
     background-color: var(--color-page);
 
-
+    --space-xs: 4px;
     --space-s: 8px;
     --space-m: 12px;
     --space-xm: 16px;
